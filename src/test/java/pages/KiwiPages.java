@@ -30,7 +30,7 @@ public class KiwiPages {
     public WebElement ulkeYazmaKutusu;
 
     @FindBy(xpath="(//*[@content-desc='Add destination'])[1]")
-    public WebElement kalkisbutonu;
+    public WebElement kalkisvarisbutonu;
 
     @FindBy(xpath = "//*[@text='Choose']")
     public WebElement secButonu;
@@ -49,5 +49,33 @@ public class KiwiPages {
 
     @FindBy(xpath="//*[@text='Best']")
     public WebElement bestbutonu;
+
+    @FindBy(xpath="//*[@text='Cheapest']")
+    public WebElement enUcuzbutonu;
+
+    @FindBy(xpath="//*[@text='Stops']")
+    public WebElement Stopbutonu;
+
+    @FindBy(xpath="//*[@text='Nonstop']")
+    public WebElement nonStopbutonu;
+
+    @FindBy(xpath="(//*[@class='android.widget.TextView'])[12]")
+    public WebElement FiyatYazisi;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

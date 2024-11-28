@@ -11,10 +11,6 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class Kiwi {
-    // gidis tarihi 29 Kasim olarak secilir ve set date e tiklanir
-    // search butonuna tiklanir
-    // en  ucuz ve aktarmasiz filtrelemeleri yapilir
-    // gelen bilet fiyati kaydedilir ve kullanicin telefonuna sms olarak gonderilir
 
     AndroidDriver<AndroidElement> driver= Driver.getAndroidDriver();
 
@@ -66,7 +62,7 @@ public class Kiwi {
         }
 
         Thread.sleep(2000);
-        page.kalkisbutonu.click();
+        page.kalkisvarisbutonu.click();
         Thread.sleep(2000);
         page.secButonu.click();
 
@@ -78,6 +74,43 @@ public class Kiwi {
         }else {
             page.ulkeYazmaKutusu.sendKeys("Frankfurt");
         }
+        Thread.sleep(2000);
+        page.kalkisvarisbutonu.click();
+        Thread.sleep(2000);
+        page.secButonu.click();
+
+        // gidis tarihi 29 Kasim olarak secilir ve set date e tiklanir
+        page.tarihbutonu.click();
+        Thread.sleep(2000);
+        ReusableMethods.koordinatTiklamaMethodu(800,1400,500);
+        page.SetDatebutonu.click();
+        Thread.sleep(2000);
+
+        // search butonuna tiklanir
+        page.Seachbutonu.click();
+        Thread.sleep(2000);
+
+        // en  ucuz ve aktarmasiz filtrelemeleri yapilir
+        page.bestbutonu.click();
+        page.enUcuzbutonu.click();
+        Thread.sleep(2000);
+        page.Stopbutonu.click();
+        page.nonStopbutonu.click();
+        Thread.sleep(2000);
+
+        // gelen bilet fiyati kaydedilir ve kullanicin telefonuna sms olarak gonderilir
+        String fiyatbilgisi=page.FiyatYazisi.getText();
+        driver.sendSMS("11111111111","Bilet fiyati: "+fiyatbilgisi);
+
+
+
+
+
+
+
+
+
+
 
 
 
