@@ -22,5 +22,7 @@ public class AllCurrencyPage {
     @FindBy(id = "com.smartwho.SmartAllCurrencyConverter:id/b000")
     public WebElement ucSifir;
 
+    @FindBy(id = "com.smartwho.SmartAllCurrencyConverter:id/EditTextCurrencyB")
+    public WebElement sonuc;
 
 }
