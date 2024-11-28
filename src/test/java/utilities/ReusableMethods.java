@@ -1,6 +1,7 @@
 package utilities;
 
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 
@@ -16,6 +17,17 @@ public class ReusableMethods {
                 .release()
                 .perform();
 
+    }
+
+    public static void scrollWithUiScrollableAndClick(String elementText) {
+        AndroidDriver driver = (AndroidDriver)  Driver.getAndroidDriver();
+        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
+        driver.findElementByXPath("//*[@text='" + elementText + "']").click();
+    }
+
+    public static void scrollWithUiScrollable(String elementText){
+        AndroidDriver driver = (AndroidDriver)  Driver.getAndroidDriver();
+        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
     }
 
 
